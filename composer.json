@@ -7,6 +7,8 @@
     ],
     "require": {
         "wpackagist-plugin/akismet": "3.1.1",
-        "wpackagist-theme/evolve": "*"
+        "wpackagist-plugin/woocommerce": "*",
+        "wpackagist-theme/evolve": "*",
+        "wpackagist-theme/flat-bootstrap": "*"
     }
 }
