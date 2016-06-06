@@ -8,7 +8,9 @@
     "require": {
         "php": ">=5.4",
         "composer/installers": "1.*",
-        "johnpbloch/wordpress": "4.5.*"
+        "johnpbloch/wordpress": "4.5.*",
+        "wpackagist-plugin/akismet": "*",
+        "wpackagist-plugin/woocommerce": "*"
     },
     "extra": {
         "wordpress-install-dir": "public/wp",
