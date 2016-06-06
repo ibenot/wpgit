@@ -1,5 +1,10 @@
 wp-config.php
 .htaccess
-/wp-content/*
 /vendor
 composer.lock
+
+# Don’t ignore hipay-sage theme
+!/wp-content/themes/hipay-sage
+!/wp-content/themes/hipay-sage-child
+
+#/wp-content

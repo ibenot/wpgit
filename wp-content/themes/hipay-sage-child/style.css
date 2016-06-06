@@ -1,0 +1,63 @@
+/*
+ Theme Name:   Developer Portal
+ Theme URI:    https://roots.io/sage/
+ Description:  HiPay Sage child for Developer Portal
+ Author:       Ben NOTTEGHEM
+ Author URI:   #
+ Template:     hipay-sage
+ Version:      1.0.0
+ License:      MIT License
+ License URI:  http://opensource.org/licenses/MIT
+ Tags:         #
+ Text Domain:  hipay-sage-child
+*/
+
+/*body{
+	overflow: auto !important;
+}*/
+
+header .navbar-brand {
+    margin: 15px 0 0 !important;
+}
+
+header.nav-up {
+    top: -80px !important;
+}
+
+header .navbar-brand {
+    height: 45px !important;
+}
+
+.bold{
+	font-weight: bold !important;
+}
+
+.lightWeight{
+	font-weight: 200 !important;
+}
+.mediumWeight{
+	font-weight: 500 !important;
+}
+
+.defaultLetterSpacing{
+	letter-spacing: 0px;
+}
+
+.megaMenuBlocks strong{
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+.product_logo_by_type img{
+		margin:0 auto;
+		margin-bottom:20px;
+		margin-top:10px;
+		display: block;
+		width: 100%;
+	}
+
+.listing_products_content, .productsOnPlatformPage .pf-content p{
+	font-size: 0.7em !important;
+    text-align: justify !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
