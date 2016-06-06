@@ -1,21 +1,5 @@
-# Ignore wp-config.php and .htaccess
 wp-config.php
 .htaccess
-
-# Ignore the wp-content directory
-/wp-content
-
-# Don’t ignore akismet plugin
-#!/wp-content/plugins/akismet
-
-
-
-# Don’t ignore plugins dir, but ignore everything inside
-#!/wp-content/plugins
-#/wp-content/plugins/*
-
-# Don’t ignore hipaydp plugin
-#!/wp-content/plugins/hipaydp
-
-# Don’t ignore hipay theme + child
-#!/wp-content/themes
+/wp-content/*
+/vendor
+composer.lock
