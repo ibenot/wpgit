@@ -1,16 +1,24 @@
-wp-config.php
-.htaccess
+# wp-config.php
+# .htaccess
+# /vendor
+# composer.lock
+
+# # Don’t ignore hipay theme
+# !/wp-content/themes/hipay-sage
+# !/wp-content/themes/hipay-sage-child
+
+# #Ignore plugins
+# #HiPay plugin  : via Github Dev Portal private repo
+# #Other plugins : automatically added via Composer
+# /wp-content/plugins
+
+# # Don’t ignore hipay plugin
+# !/wp-content/plugins/hipay-sage
+
+
+
+
+/public/wp
 /vendor
-composer.lock
-
-# Don’t ignore hipay theme
-!/wp-content/themes/hipay-sage
-!/wp-content/themes/hipay-sage-child
-
-#Ignore plugins
-#HiPay plugin  : via Github Dev Portal private repo
-#Other plugins : automatically added via Composer
-/wp-content/plugins
-
-# Don’t ignore hipay plugin
-!/wp-content/plugins/hipay-sage
+production-config.php
+local-config.php
