@@ -32,3 +32,5 @@ local-config.php
 # Don’t ignore hipay plugin
 /public/wp-content/plugins/*
 !/public/wp-content/plugins/hipay-sage
+
+.htaccess
