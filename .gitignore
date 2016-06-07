@@ -9,7 +9,6 @@ production-config.php
 dev-config.php
 
 # Don’t ignore hipay theme
-#!/public/wp-content/themes/twentysixteen
 !/public/wp-content/themes/hipay-sage
 !/public/wp-content/themes/hipay-sage-child
 
@@ -17,5 +16,5 @@ dev-config.php
 /public/wp-content/plugins/*
 !/public/wp-content/plugins/hipaydp
 
-# Ignore htaccess for url rewriting configuration
+# Ignore htaccess
 .htaccess
