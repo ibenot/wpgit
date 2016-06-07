@@ -76,18 +76,33 @@ echo "URL Replace: "$URL_REPLACE
 #Update wp-config WP_CONTENT_URL
 echo "define( 'WP_CONTENT_URL', '$URL_REPLACE/public/wp-content' );" >> dev-config.php
 
-# WP-Cli
-wp --info
+# wp --info
+# Composer
 composer install
+
+# --------------- WP-Cli -----------------------------
+# Create database
 wp db create
+
+# Import dump.sql 
 wp db import dump.sql
+
+# Search & Replace URL in db
 wp search-replace $URL_SEARCH $URL_REPLACE
+
+# Fix home URL
 wp option update home $URL_REPLACE
+
+# Fix siteurl
 wp option update siteurl $URL_REPLACE"/public/wp"
+
+# Regenerate .htaccess to enable URL Rewriting
 wp rewrite structure '/%postname%/'
+
+# Check installed Plugins & thèmes
 wp plugin status
 wp theme status
 
-echo "******************************************"
-echo "Dev Portal is ready on: "$URL_REPLACE
-echo "******************************************"
+echo "\n******************************************"
+echo "==> Dev Portal is ready on: "$URL_REPLACE
+echo "******************************************\n"
