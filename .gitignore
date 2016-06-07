@@ -6,7 +6,7 @@
 
 # Ignore config files
 production-config.php
-local-config.php
+dev-config.php
 
 # Don’t ignore hipay theme
 !/public/wp-content/themes/twentysixteen
