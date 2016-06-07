@@ -97,7 +97,7 @@ wp option update home $URL_REPLACE
 wp option update siteurl $URL_REPLACE"/public/wp"
 
 # Regenerate .htaccess to enable URL Rewriting
-wp rewrite structure '/%postname%/'
+wp rewrite structure '/%postname%/' --hard
 
 # Check installed Plugins & thèmes
 wp plugin status
