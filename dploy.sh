@@ -17,6 +17,33 @@ echo "
      //////////////////////////////,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 "
 
+# --------------------------- REQUIRED COMPONENTS ------------------------------
+
+# If WP-cli is not available
+if ! [ -x "$(command -v wp)" ]; then
+  echo 'WP-CLI is not already installed...\nInstallation:' >&2
+  curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+  chmod +x wp-cli.phar
+  sudo mv wp-cli.phar /usr/local/bin/wp
+  echo "WP-CLI is now installed!"
+fi
+
+# If Composer is not available
+if ! [ -x "$(command -v composer)" ]; then
+  echo 'COMPOSER is not installed...\nInstallation:' >&2
+  curl -sS https://getcomposer.org/installer | php
+  mv composer.phar /usr/local/bin/composer
+  echo "COMPOSER is now installed!"
+fi
+
+# We're ready to start installation...
+echo "REQUIRED COMPONENTS..."
+wp --version
+composer --version
+echo ""
+
+# --------------------------- INSTALLATION ------------------------------
+
 # Duplicate dist config file
 cp dev-config.sample.php dev-config.php
 
