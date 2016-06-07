@@ -9,7 +9,7 @@
         "php": ">=5.4",
         "composer/installers": "1.*",
         "johnpbloch/wordpress": "4.5.*",
-        "wpackagist-theme/hueman":"twentysixteen",
+        "wpackagist-theme/twentysixteen":"*",
         "wpackagist-plugin/akismet": "*",
         "wpackagist-plugin/woocommerce": "*"
     },
