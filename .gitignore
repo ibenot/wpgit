@@ -17,5 +17,5 @@ local-config.php
 /public/wp-content/plugins/*
 !/public/wp-content/plugins/hipaydp
 
-# Don't ignore htaccess for url rewriting
-!.htaccess
+# Ignore htaccess for url rewriting configuration
+.htaccess
