@@ -88,6 +88,6 @@ wp rewrite structure '/%postname%/'
 wp plugin status
 wp theme status
 
-siteurl=$(wp option get siteurl)
-url=$(echo $siteurl | awk -F/ '{print $3}')
-echo $url
+echo "******************************************"
+echo "Dev Portal is ready on: "$URL_REPLACE
+echo "******************************************"
