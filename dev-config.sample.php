@@ -1,17 +1,5 @@
 <?php
 
-/** The name of the database for WordPress */
-define('DB_NAME', 'XXXXXXXXXXXXXXXXX');
-
-/** MySQL database username */
-define('DB_USER', 'XXXXXXXXXXXXXXXXX');
-
-/** MySQL database password */
-define('DB_PASSWORD', 'XXXXXXXXXXXXXXXXX');
-
-/** MySQL hostname */
-define('DB_HOST', 'XXXXXXXXXXXXXXXXX');
-
 ini_set( 'display_errors', E_ALL );
 
 define('AUTH_KEY',         'h{~oo[3h@)Cxn(r23w^3bdRbkvh?@x`eG~VduWJiU0_dt.0SH5[@+CW3F=N%Ij{q');
