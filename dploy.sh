@@ -1,8 +1,5 @@
 #!/bin/sh
-
-# Clearing prompt
 clear
-
 echo "
 ///////////////////////////////,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,     
 (////////////////@@/////////@@(,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,    
@@ -42,7 +39,7 @@ wp --version
 composer --version
 echo ""
 
-# --------------------------- INSTALLATION ------------------------------
+# --------------------------- Init install ------------------------------
 
 # Duplicate dist config file
 cp dev-config.sample.php dev-config.php
@@ -57,6 +54,8 @@ DB_PASSWORD=root
 DB_HOST=localhost
 VHOST_IP="developer.hipay.dev"
 VHOST_PORT="8888"
+
+# --------------------------- Read user config ------------------------------
 
 echo "------------------- DB Settings -------------------"
 # Read user settings
@@ -81,36 +80,21 @@ echo "define('DB_USER', '$CUSTOM_DB_USER');" >> dev-config.php
 echo "define('DB_PASSWORD', '$CUSTOM_DB_PASSWORD');" >> dev-config.php
 echo "define('DB_HOST', '$CUSTOM_DB_HOST');" >> dev-config.php
 
-# Show DB config
-# WPDBNAME=`cat dev-config.php | grep DB_NAME | cut -d \' -f 4`
-# WPDBUSER=`cat dev-config.php | grep DB_USER | cut -d \' -f 4`
-# WPDBPASS=`cat dev-config.php | grep DB_PASSWORD | cut -d \' -f 4`
-# WPDBHOST=`cat dev-config.php | grep DB_HOST | cut -d \' -f 4`
-# echo "\nDB_NAME: "$WPDBNAME
-# echo "DB_USER: "$WPDBUSER
-# echo "DB_PASSWORD: "$WPDBPASS
-# echo "DB_HOST: "$WPDBHOST
-# echo
+# --------------------------- Search & replace ------------------------------
 
 # URL Search in dump.sql
 URL_SEARCH=`grep home dump.sql | cut -d \' -f 10`
 echo "URL Search: "$URL_SEARCH
 
-#Full path
-#CURRENT_PATH=$PWD
-
-#Current folder (partial path)
-#CURRENT_DIRECTORY=${PWD##*/}
-
 # URL Replace
-#URL_REPLACE="http://"$CUSTOM_IP"/"$CURRENT_DIRECTORY
 URL_REPLACE="http://"$CUSTOM_VHOST_IP":"$CUSTOM_VHOST_PORT
 echo "URL Replace: "$URL_REPLACE
 
 #Update wp-config WP_CONTENT_URL
 echo "define( 'WP_CONTENT_URL', '$URL_REPLACE/public/wp-content' );" >> dev-config.php
 
-# wp --info
+# --------------- Composer -----------------------------
+
 # Composer
 composer install
 
@@ -137,6 +121,8 @@ wp rewrite structure '/%postname%/' --hard
 wp plugin status
 wp theme status
 
-echo "\n***********************************************************"
-echo "==> HiPay Developer Portal is ready on: "$URL_REPLACE
-echo "\n***********************************************************\n"
+# --------------- Finish -----------------------------
+
+echo "\n***************************************************************"
+echo $URL_REPLACE
+echo "****************************************************************\n"
