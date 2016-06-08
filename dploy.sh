@@ -87,7 +87,12 @@ URL_SEARCH=`grep home dump.sql | cut -d \' -f 10`
 echo "URL Search: "$URL_SEARCH
 
 # URL Replace
+if [ $CUSTOM_VHOST_PORT != 80 ] 
+then 
 URL_REPLACE="http://"$CUSTOM_VHOST_IP":"$CUSTOM_VHOST_PORT
+else 
+URL_REPLACE="http://"$CUSTOM_VHOST_IP
+fi
 echo "URL Replace: "$URL_REPLACE
 
 #Update wp-config WP_CONTENT_URL
